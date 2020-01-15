@@ -2,8 +2,13 @@ package com.dsa.matrix;
 
 import java.util.Arrays;
 
+/**
+ * Print the given matrix (m X n) in spiral form.
+ * output - 1  2  3  4  8  12  16  20  19  18  17  13  9  5  6  7  11  15  14  10 
+ * @author Goutam
+ *
+ */
 public class MatrixSpairalPrinting {
-
 	public static void main(String[] args) {
 		int[][] matrix = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 }, { 17, 18, 19, 20 } };
 		for (int[] row : matrix) {
@@ -21,6 +26,11 @@ public class MatrixSpairalPrinting {
 		printSpiral(matrix);
 	}
 
+	/**
+	 * printSpiral
+	 * 
+	 * @param matrix
+	 */
 	public static void printSpiral(int[][] matrix) {
 		int rowSize = matrix.length; //5
 		int colSize = matrix[0].length; //4
