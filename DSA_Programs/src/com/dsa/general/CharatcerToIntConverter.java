@@ -36,7 +36,7 @@ public class CharatcerToIntConverter {
 		int sum = 0;
 		for (i = i; i < st.length(); i++) {
 			char ch = st.charAt(i);
-			int a = ch - '0';
+			int a = ch - '0'; //0=48, 1(49)-48 = 1(int)
 			if (a > 0 && a <= 9) {
 				sum = sum * 10;
 				sum = sum + a;
