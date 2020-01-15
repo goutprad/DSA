@@ -1,5 +1,11 @@
 package com.dsa.general;
 
+/**
+ * Swap Three Variables
+ * 
+ * @author Goutam
+ *
+ */
 public class SwapThreeVariable {
 
 	public static void main(String[] args) {
