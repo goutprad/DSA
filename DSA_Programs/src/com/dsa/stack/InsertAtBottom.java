@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author Goutam
  *
  */
-public class InsertAtButtom {
+public class InsertAtBottom {
 
 	public static void main(String[] args) {
 		Stack<Integer> st =new Stack<>();
@@ -17,7 +17,7 @@ public class InsertAtButtom {
 		st.push(3);
 		System.out.println("Original Stack...");
 		System.out.println(st); //[1, 2, 3]
-		insert_at_buttom(st, 4);
+		insert_at_bottom(st, 4);
 		System.out.println("After inserting at bottom...");
 		System.out.println(st); //[4, 1, 2, 3]
 	}
@@ -28,13 +28,13 @@ public class InsertAtButtom {
 	 * @param stack
 	 * @param a
 	 */
-	static void insert_at_buttom(Stack<Integer> stack, int a) {
+	static void insert_at_bottom(Stack<Integer> stack, int a) {
 		if(stack.isEmpty()) {
 			stack.push(a);
 		} else {
 			int b = stack.peek();
 			stack.pop();
-			insert_at_buttom(stack, a);
+			insert_at_bottom(stack, a);
 			stack.push(b);
 		}
 	}
