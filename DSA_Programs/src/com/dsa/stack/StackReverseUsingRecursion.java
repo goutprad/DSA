@@ -2,6 +2,12 @@ package com.dsa.stack;
 
 import java.util.Stack;
 
+/**
+ * Reverse a Stack using Recursion
+ * 
+ * @author Goutam
+ *
+ */
 public class StackReverseUsingRecursion {
 
 	public static void main(String[] args) {
@@ -30,24 +36,24 @@ public class StackReverseUsingRecursion {
 			int top = stack.peek();
 			stack.pop();
 			stackReverse(stack); 
-			insert_at_buttom(stack, top);
+			insert_at_bottom(stack, top);
 		}
 	}
+	
 	/**
 	 * insert at bottom
 	 * 
 	 * @param stack
 	 * @param x
 	 */
-	static void insert_at_buttom(Stack<Integer> stack, int x) {
+	static void insert_at_bottom(Stack<Integer> stack, int x) {
 		if (stack.isEmpty()) {
 			stack.push(x);
 		} else {
 			int y = stack.peek();
 			stack.pop();
-			insert_at_buttom(stack, x);
+			insert_at_bottom(stack, x);
 			stack.push(y);
 		}
 	}
-
 }
