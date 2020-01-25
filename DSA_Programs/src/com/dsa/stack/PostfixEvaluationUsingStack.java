@@ -2,7 +2,19 @@ package com.dsa.stack;
 
 import java.util.Stack;
 
+/**
+ * PostfixEvaluationUsingStack
+ * 
+ * @author Goutam
+ *
+ */
 public class PostfixEvaluationUsingStack {
+	/**
+	 * solution using stack
+	 * 
+	 * @param exp
+	 * @return int result
+	 */
 	public static int evaluatePostFix(String exp) {
 		Stack<Integer> st = new Stack<Integer>();
 		// String newExp = exp.replace(" ", "");
