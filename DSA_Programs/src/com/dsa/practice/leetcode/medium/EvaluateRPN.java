@@ -1,4 +1,4 @@
-package com.dsa.practice.leetcode;
+package com.dsa.practice.leetcode.medium;
 
 import java.util.Stack;
 
