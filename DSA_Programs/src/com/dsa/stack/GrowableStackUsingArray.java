@@ -7,10 +7,9 @@ package com.dsa.stack;
  *
  */
 public class GrowableStackUsingArray {
-	int length=0;
 	int dynamicSize=5;
 	int top=-1;
-	int[] stack=new int[length+dynamicSize];
+	int[] stack=new int[dynamicSize];
 	
 	/**
 	 * createNewStack - it will create new size stack dynamically
@@ -18,6 +17,7 @@ public class GrowableStackUsingArray {
 	 * @return int[] new stack
 	 */
 	public int[] createNewStack() {
+		System.out.println("Stack is full!!..Increasing size.");
 		int[] newStack = new int[stack.length+dynamicSize];
 		for (int i = 0; i < stack.length; i++) {
 			newStack[i]=stack[i];
