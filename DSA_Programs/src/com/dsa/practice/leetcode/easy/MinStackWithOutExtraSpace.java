@@ -3,49 +3,64 @@ package com.dsa.practice.leetcode.easy;
 import java.util.Stack;
 
 /**
- * 155. Min Stack - By using two stack
+ * 155. Min Stack - Without using any extra space
  * https://leetcode.com/problems/min-stack/
  * 
  * Time Complexity - o(1)
- * Space Complexity -o(n)
+ * Space Complexity -o(1)
  * 
  * @author Goutam
  *
  */
-public class MinStack {
+public class MinStackWithOutExtraSpace {
 	Stack<Integer> stack;
-	Stack<Integer> minStack;
-
-	public MinStack() {
-		stack = new Stack<Integer>();
-		minStack = new Stack<Integer>();
+	int newMin;
+	int oldMin;
+	int top;
+	public MinStackWithOutExtraSpace() {
+		stack=new Stack<Integer>();
 	}
-
-	public void push(int x) {
-		stack.push(x);
-		if (minStack.isEmpty())
-			minStack.push(x);
-		else if (minStack.peek() >= x)
-			minStack.push(x);
+	
+	public void push(int item) {
+		if(stack.isEmpty()) {
+			newMin=item;
+			stack.push(item);
+		} else if(newMin>item) {
+			oldMin=newMin;
+			newMin=item;
+			top=newMin-oldMin;
+			stack.push(top);
+		} else {
+			stack.push(item);
+		}	
 	}
-
+	
 	public int top() {
-		return stack.peek();
+		if(stack.peek()<0) {
+			return stack.peek()+oldMin;
+		} else {
+			return stack.peek();
+		}
 	}
-
+	public int getMin() {
+		return newMin;
+	}
 	public int pop() {
-		int popped = stack.pop();
-		if (popped == minStack.peek())
-			minStack.pop();
+		int popped = Integer.MIN_VALUE;
+		if(!stack.isEmpty() && stack.peek()<0) {
+			stack.pop();
+			newMin=oldMin;
+			oldMin=newMin-top;
+			top=newMin-oldMin;
+			popped=newMin+top;
+		} else if(!stack.isEmpty()) {
+			popped = stack.pop();
+		}
 		return popped;
 	}
-
-	public int getMin() {
-		return minStack.peek();
-	}
-
+	
 	public static void main(String[] args) {
-		MinStack minStack = new MinStack();
+		MinStackWithOutExtraSpace minStack=new MinStackWithOutExtraSpace();
 		minStack.push(5);
 		minStack.push(4);
 		minStack.push(9);
