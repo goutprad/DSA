@@ -1,7 +1,7 @@
 package com.dsa.sort.algos;
 
 /**
- * Bubble Sort-(In-Place Sort)
+ * Insertion Sort-(Stable Sort)
  * 
  * Time Complexity- O(n^2) 
  * Space Complexity - O(1)
@@ -9,36 +9,36 @@ package com.dsa.sort.algos;
  * @author Goutam
  *
  */
-public class BubbleSort {
+public class InsertionSort {
 	/**
-	 * bubbleSort
+	 * insertionSort
 	 * 
 	 * @param arr
 	 * @return
 	 */
-	public int[] bubbleSort(int[] arr) {
-		for (int i = 0; i < arr.length - 1; i++) { //we can find 1st bigger element
-			for (int j = 0; j < arr.length - i - 1; j++) { //don't compare last bigger one, this will compare element
-				// System.out.println(i+"----"+j+"-"+(j+1));
-				if (arr[j] > arr[j + 1]) {
-					int temp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = temp;
-				}
+	public int[] insertionSort(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			int j = i;
+			int currNum = arr[i];
+
+			while (j > 0 && currNum < arr[j - 1]) {
+				arr[j] = arr[j - 1];
+				j--;
 			}
+			arr[j] = currNum;
 		}
 		return arr;
 	}
 
 	public static void main(String[] args) {
-		BubbleSort bubble = new BubbleSort();
+		InsertionSort insertSort = new InsertionSort();
 		int[] input = { 3, 5, 4, 7, 9, 6, 2, 1, 8 };
 		System.out.print("Before Sorting : ");
 		for (int i = 0; i < input.length; i++) {
 			System.out.print(input[i] + " ");
 		}
 		System.out.println();
-		int[] sorted = bubble.bubbleSort(input);
+		int[] sorted = insertSort.insertionSort(input);
 		System.out.print("After Sorting : ");
 		for (int i = 0; i < sorted.length; i++) {
 			System.out.print(sorted[i] + " "); // 1 2 3 4 5 6 7 8 9

@@ -10,6 +10,12 @@ package com.dsa.sort.algos;
  *
  */
 public class SelectionSort {
+	/**
+	 * selectionSort
+	 * 
+	 * @param arr
+	 * @return
+	 */
 	public int[] selectionSort(int[] arr) {
 		for (int i = 0; i < arr.length - 1; i++) {
 			int min = i;
