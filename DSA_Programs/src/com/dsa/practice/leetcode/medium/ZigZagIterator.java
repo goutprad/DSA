@@ -24,20 +24,14 @@ public class ZigZagIterator {
 	}
 
 	public int next() {
-		if (hasNext()) {
-			int item = Integer.MAX_VALUE;
-			flag = !flag;
-			if (flag & i < arr1.length) {
-				item = arr1[i++];
-				return item;
-			} else if (j < arr2.length) {
-				item = arr2[j++];
-				return item;
-			}
-		} else {
-			System.out.println("Iterator is empty!");
+		int item = 0;
+		flag = !flag;
+		if (flag & i < arr1.length) {
+			item = arr1[i++];
+		} else if (j < arr2.length) {
+			item = arr2[j++];
 		}
-		throw new ArrayIndexOutOfBoundsException("No elemnt present!!");
+		return item;
 	}
 
 	public boolean hasNext() {
@@ -51,17 +45,8 @@ public class ZigZagIterator {
 		int[] arr1 = { 1, 2 };
 		int[] arr2 = { 3, 4, 5, 6 };
 		ZigZagIterator zigZag = new ZigZagIterator(arr1, arr2);
-		System.out.println(zigZag.hasNext()); //true
-		System.out.println(zigZag.next()); // 1
-		System.out.println(zigZag.next()); // 3
-		System.out.println(zigZag.next()); // 2
-		System.out.println(zigZag.next()); // 4
-		System.out.println(zigZag.next()); // 5
-		System.out.println(zigZag.hasNext());
-		System.out.println(zigZag.next()); // 6
-		System.out.println(zigZag.hasNext());
-		System.out.println(zigZag.next()); // 2147483647
-		System.out.println(zigZag.hasNext());
+		while (zigZag.hasNext()) {
+			System.out.print(zigZag.next() + " ");
+		}
 	}
-
 }
