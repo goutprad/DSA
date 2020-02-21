@@ -1,5 +1,12 @@
 package com.dsa.practice.leetcode.easy;
 
+/**
+ * 83.Remove Duplicates from Sorted List
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+ * 
+ * @author Goutam
+ *
+ */
 public class RemoveDuplicatesFromSortedList {
 	ListNode head;
 

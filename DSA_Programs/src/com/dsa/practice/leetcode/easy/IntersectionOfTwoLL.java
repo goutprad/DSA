@@ -1,7 +1,12 @@
 package com.dsa.practice.leetcode.easy;
 
-import java.util.LinkedList;
-
+/**
+ * 160. Intersection of Two Linked Lists
+ * https://leetcode.com/problems/intersection-of-two-linked-lists/
+ * 
+ * @author Goutam
+ *
+ */
 public class IntersectionOfTwoLL {
 	ListNode head;
 

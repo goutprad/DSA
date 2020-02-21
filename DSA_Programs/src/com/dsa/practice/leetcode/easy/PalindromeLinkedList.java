@@ -1,7 +1,12 @@
 package com.dsa.practice.leetcode.easy;
 
-import java.util.List;
-
+/**
+ * 234. Palindrome Linked List
+ * https://leetcode.com/problems/palindrome-linked-list/
+ * 
+ * @author Goutam
+ *
+ */
 public class PalindromeLinkedList {
 	ListNode head;
 

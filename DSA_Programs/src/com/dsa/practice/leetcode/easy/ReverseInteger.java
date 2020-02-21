@@ -1,5 +1,10 @@
 package com.dsa.practice.leetcode.easy;
 
+/**
+ * 
+ * @author Goutam
+ *
+ */
 public class ReverseInteger {
 	public int reverse(int x) {
 		boolean isNegative = false;

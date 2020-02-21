@@ -1,5 +1,12 @@
 package com.dsa.practice.leetcode.easy;
 
+/**
+ * 21. Merge Two Sorted Lists
+ * https://leetcode.com/problems/merge-two-sorted-lists/
+ * 
+ * @author Goutam
+ *
+ */
 public class MergeTwoSortedLists {
 	ListNode head;
 
