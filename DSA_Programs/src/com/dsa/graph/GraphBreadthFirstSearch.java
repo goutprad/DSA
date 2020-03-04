@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+/**
+ * Breadth First Search - using Queue
+ * 
+ * @author Goutam
+ *
+ */
 public class GraphBreadthFirstSearch {
 
 	static class Graph {
@@ -39,16 +45,24 @@ public class GraphBreadthFirstSearch {
 
 			visited[start] = true;
 			queue.add(start);
-
-			while (queue.size() != 0) {
+			System.out.println(start + " ");
+			while (queue.isEmpty() == false) {
 				int ele = queue.poll();
-				System.out.println(ele + " ");
+				if (!visited[ele]) {
+					System.out.println(ele + " ");
+					visited[ele] = true;
+				}
+
 				Iterator<Integer> itr = adjacencyList[ele].listIterator();
 				while (itr.hasNext()) {
 					int n = itr.next();
 					if (!visited[n]) {
-						visited[n] = true;
 						queue.add(n);
+					}
+				}
+				for (int i = 0; i < visited.length; i++) {
+					if (visited[i] == false && queue.isEmpty() == false) {
+						queue.add(i);
 					}
 				}
 			}
@@ -57,15 +71,17 @@ public class GraphBreadthFirstSearch {
 	}
 
 	public static void main(String[] args) {
-		Graph graph = new Graph(5);
+		Graph graph = new Graph(6);
 
 		graph.addEdge(0, 1);
-		graph.addEdge(0, 4);
-		graph.addEdge(1, 4);
-		graph.addEdge(1, 3);
+		graph.addEdge(0, 2);
 		graph.addEdge(1, 2);
-		graph.addEdge(2, 3);
+		graph.addEdge(1, 3);
 		graph.addEdge(3, 4);
+		graph.addEdge(2, 3);
+		graph.addEdge(4, 0);
+		graph.addEdge(4, 1);
+		graph.addEdge(5, 4);
 
 //		graph.addEdge(0, 1);
 //		graph.addEdge(0, 2);
@@ -74,7 +90,7 @@ public class GraphBreadthFirstSearch {
 //		graph.addEdge(2, 3);
 //		graph.addEdge(3, 3);
 		graph.printGraph();
-		graph.BFS(0); // 0,1,4,3,2
+		graph.BFS(0); // 0,2,3,4,1,5
 	}
 
 }
