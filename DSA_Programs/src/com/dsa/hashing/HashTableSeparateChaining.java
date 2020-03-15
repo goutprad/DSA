@@ -3,7 +3,7 @@ package com.dsa.hashing;
 import java.util.ArrayList;
 
 /**
- * Hashmap using separate chaining as collision technique
+ * HashTable using separate chaining as collision technique
  * 
  * @author Goutam
  *
@@ -21,12 +21,12 @@ class HashNode<K, V> {
 	}
 }
 
-public class HashMap_SeparateChaining<K, V> {
+public class HashTableSeparateChaining<K, V> {
 	private ArrayList<HashNode<K, V>> bucketArr;
 	private int numBuckets;
 	private int size;
 
-	HashMap_SeparateChaining() {
+	HashTableSeparateChaining() {
 		bucketArr = new ArrayList<HashNode<K, V>>();
 		numBuckets = 10;
 		size = 0;
@@ -153,7 +153,7 @@ public class HashMap_SeparateChaining<K, V> {
 	}
 
 	public static void main(String[] args) {
-		HashMap_SeparateChaining<String, Integer> map = new HashMap_SeparateChaining<String, Integer>();
+		HashTableSeparateChaining<String, Integer> map = new HashTableSeparateChaining<String, Integer>();
 		map.add("a", 100);
 		map.add("B", 200);
 		map.add("C", 400);

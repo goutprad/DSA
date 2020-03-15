@@ -1,17 +1,17 @@
 package com.dsa.hashing;
 
 /**
- * Hashmap using Open Addressing (Linear Probing)
+ * HashTable using Open Addressing (Linear Probing)
  * 
  * @author Goutam
  *
  */
-public class HashMapLinearProbing {
+public class HashTableLinearProbing {
 	private String[] keys;
 	private String[] vals;
 	private int currentSize, maxSize;
 
-	public HashMapLinearProbing(int capacity) {
+	public HashTableLinearProbing(int capacity) {
 		currentSize = 0;
 		maxSize = capacity;
 		keys = new String[maxSize];
@@ -75,6 +75,7 @@ public class HashMapLinearProbing {
 				return vals[index];
 			}
 			index = (index + 1) % maxSize;
+			System.out.println("index:" + index);
 		}
 		return null;
 	}
@@ -115,7 +116,7 @@ public class HashMapLinearProbing {
 	}
 
 	public static void main(String[] args) {
-		HashMapLinearProbing map = new HashMapLinearProbing(10);
+		HashTableLinearProbing map = new HashTableLinearProbing(10);
 		map.insert("A", "10");
 		map.insert("B", "10");
 		map.insert("C", "10");
@@ -134,5 +135,6 @@ public class HashMapLinearProbing {
 		map.remove("E");
 		System.out.println(map.size());
 		map.printHashTable();
+		System.out.println(map.get("GG"));
 	}
 }
