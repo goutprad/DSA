@@ -27,12 +27,30 @@ public class StringSearch {
 		return -1;
 	}
 
+	public int textSearch(String text, String pattern) {
+		int textLength = text.length();
+		int patternLengh = pattern.length();
+		for (int i = 0; i <= textLength - patternLengh; i++) {
+			int j;
+			for (j = 0; j < patternLengh; j++) {
+				if (text.charAt(i + j) != pattern.charAt(j)) {
+					break;
+				}
+			}
+			if (j == patternLengh) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
 	public static void main(String[] args) {
 		StringSearch search = new StringSearch();
 		String input = "THIS IS A TEST TEXTZ";
-		String patt = "Z";
-		System.out.println(search.simpleTextSearch(input, patt)); // -1 : Not Found otherwise will print first index of
-																	// text matched
-
+		String pattern = "Z";
+		System.out.println(search.simpleTextSearch(input, pattern)); // -1 : Not Found otherwise will print first index
+																		// of
+																		// text matched
+		System.out.println(search.textSearch(input, pattern));
 	}
 }
