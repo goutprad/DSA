@@ -1,7 +1,12 @@
-package com.leetcode.ThirtyDayLeetCodeChallenge;
+package com.dsa.practice.leetcode.easy;
 
-public class WeekI_MaximumSubarray {
-
+/**
+ * https://leetcode.com/problems/maximum-subarray/
+ * 
+ * @author Goutam
+ *
+ */
+public class MaximumSubArray {
 	int start = 0;
 	int end = 0;
 
@@ -48,8 +53,9 @@ public class WeekI_MaximumSubarray {
 	}
 
 	public static void main(String[] args) {
-		WeekI_MaximumSubarray leetcode = new WeekI_MaximumSubarray();
-		int[] input = { -2 };
-		System.out.println(leetcode.maxSubArray(input));
+		MaximumSubArray leetcode = new MaximumSubArray();
+		int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		System.out.println(leetcode.maxSubArray(nums));
+		System.out.println(leetcode.maxSubArray_bruteforce(nums));
 	}
 }
